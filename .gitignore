@@ -2,3 +2,5 @@
 *.iml
 lib
 out
+scala/target
+target
