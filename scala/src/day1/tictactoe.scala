@@ -12,18 +12,20 @@ object Main extends App {
   val sample3 = List("O", "X", "X", "X", "O", " ", " ", " ", "X")
   val sample4 = List("O", "X", "X", " ", " ", " ", "O", " ", " ")
   val sample5 = List("O", "X", "O", "X", "O", "X", "X", "O", "X")
+  val sample6 = List("O", "X", "X", "O", "X", " ", " ", "X", " ")
 
   println(s"result1 : ${new TicTacToe(sample1).getResult()}")
   println(s"result2 : ${new TicTacToe(sample2).getResult()}")
   println(s"result3 : ${new TicTacToe(sample3).getResult()}")
   println(s"result4 : ${new TicTacToe(sample4).getResult()}")
   println(s"result5 : ${new TicTacToe(sample5).getResult()}")
+  println(s"result6 : ${new TicTacToe(sample6).getResult()}")
 }
 
 class TicTacToe(board: List[String]) {
   def getResult(): GameResult.Value = {
     if (checkRows(0) || checkRows(3) || checkRows(6)
-      || checkCols(0) || checkCols(3) || checkCols(6)
+      || checkCols(0) || checkCols(1) || checkCols(2)
       || checkDiags()) {
       GameResult.WIN
     } else if (checkAllFilled()) {
